@@ -1,0 +1,6 @@
+{
+  "name": "Typing Speed Test",
+  "description": "A minimalist, responsive typing speed test application styled like Monkeytype with real-time feedback, WPM, and accuracy indicators.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

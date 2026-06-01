@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "JetBrains Mono", ui-monospace, monospace;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  
+  --color-bg-dark: #323437;
+  --color-bg-charcoal: #2c2e31;
+  --color-amber-select: #e2b714;
+  --color-mt-gray: #646669;
+  --color-mt-text: #d1d0c5;
+  --color-mt-error: #ca4754;
+  --color-mt-correct: #d1d0c5;
+}
+
+@layer utilities {
+  /* Blinking caret animation matching Monkeytype */
+  @keyframes caret-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  .animate-caret {
+    animation: caret-blink 1s infinite ease-in-out;
+  }
+
+  /* Smooth scrollbars for retro styling */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #2c2e31;
+    border-radius: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #4a4b4d;
+    border-radius: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #e2b714;
+  }
+}
+
+body {
+  background-color: #323437; /* Elegant Dark true background */
+  color: #d1d0c5; /* soft white-yellow text */
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Ensure active/correct/incorrect states look excellent with glow */
+.char-correct {
+  color: #d1d0c5; /* Monkeytype theme correct letter (same as body text, and un-typed is gray) */
+  transition: color 0.1s ease;
+}
+
+.char-incorrect {
+  color: #ca4754; /* soft red */
+  background-color: rgba(202, 71, 84, 0.15); /* error background highlight */
+  border-bottom: 2px solid #ca4754;
+  transition: all 0.1s ease;
+}
+
+.char-untyped {
+  color: #646669; /* muted gray sub color */
+}
